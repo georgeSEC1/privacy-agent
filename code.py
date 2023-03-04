@@ -33,7 +33,7 @@ def statFind(sentenceA,sentenceB,arr,threshold):
       var = 0
       for word in arr:
          try:
-            if sentenceA.count(" " + word + " ") > threshold and sentenceB.count(" " + word + " ") > threshold:
+            if len(sentenceA) > 10 and len(sentenceB) > 10 and sentenceA.count(" " + word + " ") > threshold and sentenceB.count(" " + word + " ") > threshold:
                var += sentenceA.count(" " + word + " ") +  sentenceB.count(" " + word + " ")
          except:
                False
