@@ -39,23 +39,19 @@ def statFind(sentenceA,sentenceB,arr,threshold):
                False
       return var
 def gather(file,user):    
-    output = ""
-    
+    output = ""   
     return output
 with open("fileList.conf", encoding='ISO-8859-1') as f:
     files = f.readlines()
 print("SynthReason - Synthetic Dawn")
 with open("questions.conf", encoding='ISO-8859-1') as f:
 	questions = f.readlines()
-filename = "privacy" + str(random.randint(0,10000000)) + ".txt"
+filename = "privacy#" + str(random.randint(0,10000000)) + ".txt"
 random.shuffle(questions)
 with open("nouns.txt", encoding='ISO-8859-1') as f:
      nouns = f.read()
-for question in questions:
-          user = re.sub('\W+',' ',question)
-          i = 0
-          random.shuffle(files)  
-          for file in files:
+random.shuffle(files)  
+for file in files:
                 with open(file.strip(), encoding='ISO-8859-1') as f:
                     textA = f.read()
                 if len(textA) > 0:
