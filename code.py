@@ -33,7 +33,7 @@ def statFind(sentenceA,sentenceB,arr,threshold):
       var = 0
       for word in arr:
          try:
-            if len(sentenceA) > 10 and len(sentenceB) > 10 and sentenceA.count(" " + word + " ") > threshold and sentenceB.count(" " + word + " ") > threshold:
+            if sentenceA.count(" " + word + " ") > threshold and sentenceB.count(" " + word + " ") > threshold:
                var += sentenceA.count(" " + word + " ") +  sentenceB.count(" " + word + " ")
          except:
                False
@@ -62,8 +62,8 @@ for file in files:
                             sentencesB= textB.split(token)
                             for threshold in range(100):
                                  sentenceA = sentencesA[ random.randint(0,len(sentencesA)-1)]
-                                 sentenceB = sentencesA[ random.randint(0,len(sentencesB)-1)]
-                                 if statFind(sentenceA,sentenceB,nouns,threshold) < threshold:
+                                 sentenceB = sentencesB[ random.randint(0,len(sentencesB)-1)]
+                                 if statFind(sentenceA,sentenceB,nouns,threshold) < threshold and len(sentenceA) > 25 and len(sentenceB) > 25:
                                           print("score:" , threshold)
                                           print("[" + sentenceA + token + "]")
                                           print("[" + sentenceB + token + "]")
