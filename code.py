@@ -70,7 +70,7 @@ for file in files:
                                           print()
                                           f = open(filename, "a", encoding="utf8")
                                           f.write("\n")
-                                          f.write("using " + file.strip() + " answering: " + user)
+                                          f.write("using " + file.strip())
                                           f.write("\n")
                                           f.write("score: " + str(threshold))
                                           f.write("\n")
